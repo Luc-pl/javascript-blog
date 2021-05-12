@@ -7,6 +7,7 @@ document.getElementById('test-button').addEventListener('click', function(){
 
 const titleClickHandler = function(){
     console.log('Link was clicked!');
+    event.preventDefault();
     const clickedElement = this;
 
     /* remove class 'active' from all article links */
@@ -28,8 +29,15 @@ const titleClickHandler = function(){
         activeArticle.classList.remove('active');
     }
     /* get 'href' attribute from the clicked link */
+    const articleSelector = clickedElement.getAttribute("href");
+    console.log(articleSelector);
+
     /* find the correct article using the selecetor (value of 'href' attribute) */
+    const targetArticle = document.querySelector(articleSelector);
+    console.log(targetArticle);
+
     /* add class 'active' to the correct article */
+    targetArticle.classList.add('active');
   }
   
   const links = document.querySelectorAll('.titles a');
