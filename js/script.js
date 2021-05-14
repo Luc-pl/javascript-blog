@@ -40,11 +40,14 @@
     link.addEventListener('click', titleClickHandler);
   }
 
+/////////////function generateTitleLinks/////////////////////////////
+
   const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
 
 function generateTitleLinks(customSelector = ''){
+  console.log('Wykonanie funkcji generateTitleLinks');
 
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
@@ -55,12 +58,12 @@ function generateTitleLinks(customSelector = ''){
   }
 
   /* for each article */
-  const articles = document.querySelector(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
 
   let html = '';
 
   for(let article of articles){
-  }
+
   /* get the article id */
     const articleId = article.getAttribute('id');
 
@@ -71,11 +74,13 @@ function generateTitleLinks(customSelector = ''){
 
     /* create HTML of the link */
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-    const linkHTML = templates.articleLink(linkHTMLData);
     console.log(linkHTML);
 
     /* insert link into titleList */
-
+    html = html + linkHTML;
+  }
+  
+  titleList.innerHTML = titleList.innerHTML + linkHTML; 
 }
 
 generateTitleLinks();
