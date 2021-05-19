@@ -99,36 +99,39 @@ function generateTags(){
   
   /* START LOOP: for every article: */
   for(let article of articles){
-  
-  /* find tags wrapper */
+
+    /* find tags wrapper */
     const tagWrapper = article.querySelector(optArticleTagsSelector);
   
-  /* make html variable with empty string */
+    /* make html variable with empty string */
     let html = '';
   
-  /* get tags from data-tags attribute */
+    /* get tags from data-tags attribute */
     const articleTags = article.getAttribute('data-tags');
 
     console.log(articleTags);
   
-  /* split tags into array */
+    /* split tags into array */
     const articleTagsArray = articleTags.split(' ');
+    console.log('Wywołanie funkcji split');
   
-  /* START LOOP: for each tag */
+    /* START LOOP: for each tag */
+    for(let tag of articleTagsArray){
+      
+      /* generate HTML of the link */
   
-  /* generate HTML of the link */
+      /* add generated code to html variable */
+
+    }
   
-  /* add generated code to html variable */
+    /* END LOOP: for each tag */
   
-  /* END LOOP: for each tag */
+    /* insert HTML of all the links into the tags wrapper */
   
-  /* insert HTML of all the links into the tags wrapper */
-  
-  /* END LOOP: for every article: */
+    /* END LOOP: for every article: */
+
+  }
 }
   
 generateTags();
-
-
-
 }
