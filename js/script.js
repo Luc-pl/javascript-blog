@@ -3,6 +3,7 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list';
+  optArticleAuthorSelector = '.postauthor';
 
 {const titleClickHandler = function(event){
   event.preventDefault();  
@@ -99,14 +100,6 @@ function generateTags(){
   
   /* START LOOP: for every article: */
   for(let article of articles){
-    /* create a new variable allTags with an empty object */
-
-    let allTags = {};
-
-    /* find all articles */
-
-    const articles = document.querySelectorAll('.post');
-
     /* find tags wrapper */
     const tagsWrapper = article.querySelector(optArticleTagsSelector);
   
@@ -126,8 +119,7 @@ function generateTags(){
     for(let tag of articleTagsArray){
       
       /* generate HTML of the link */
-      const linkHTMLData = {id: articleTags, title: tag };
-      const linkHTML = tagLink(linkHTMLData);
+      const linkHTML = '<li><a href-"#tag-' + '">' + tag + '</a></li>';
 
       console.log(linkHTML);
   
@@ -148,8 +140,7 @@ function generateTags(){
     /* END LOOP: for every article: */
 
     console.log('END LOOP: for every article');
-
-  }
+  }  
 }
   
 generateTags();
@@ -194,9 +185,9 @@ function tagClickHandler(event){
   
   /* START LOOP: for each found tag link */
   
-  for(let tagLink or tagLinks) {
+  for(let tagLink of tagLinks){
     /* add class active */
-    tagLinks.classList.add('active');
+    tagLink.classList.add('active');
 
     console.log('TagLinks is ', tagLinks);
   }
@@ -219,4 +210,23 @@ function addClickListenersToTags(){
 }
 
 addClickListenersToTags();
+
+// eslint-disable-next-line indent
+//function generateAuthors////////////////////////////////////
+
+function generateAuthors(){
+  console.log('Wykonanie funkcji generateAuthors');
+
+  const articles = document.querySelectorAll('.post');
+
+  for(let article of articles){
+    const authorsPlace = article.querySelector(optArticleAuthorSelector);
+
+    let html = '';
+
+    console.log(html);
+  }
+
+}
+
 }
