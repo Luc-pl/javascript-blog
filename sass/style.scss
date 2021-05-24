@@ -83,6 +83,9 @@ body {
   .active {
     font-weight: bold;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .list-horizontal {
@@ -117,4 +120,32 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+/* Tag cloud */
+
+.tags {
+  li {
+    display: inline-block;
+  }
+}
+
+.tag-size-1 {
+  font-size: 15px;
+}
+
+.tag-size-2 {
+  font-size: 20px;
+}
+
+.tag-size-3 {
+  font-size: 30px;
+}
+
+.tag-size-4 {
+  font-size: 40px;
+}
+
+.tag-size-5 {
+  font-size: 50px;
 }
