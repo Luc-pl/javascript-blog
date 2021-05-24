@@ -51,7 +51,8 @@
     optArticleAuthorSelector = '.post-author',
     optTagsListSelector = '.tags.list',
     optCloudClassCount = 5,
-    optCloudClassPrefix = 'tag-size-';
+    optCloudClassPrefix = 'tag-size-',
+    optAuthorsListSelector = '.author.list';
 
   function generateTitleLinks(customSelector = '') {
     console.log('Wykonanie funkcji generateTitleLinks');
@@ -194,7 +195,7 @@
       console.log('tagsParams:', tagsParams); 
 
       /* [NEW] add html from allTags to tagList 
-      tagList.innerHTML = allTags.join(' ');
+      //tagList.innerHTML = allTags.join(' ');
       console.log(allTags);*/  
 
       /* [NEW] create variable for all links HTML code */
@@ -205,7 +206,7 @@
         /* [NEW] generate code of a link and add it to allTagsHTML */
         /*allTagsHTML += tag + ' (' + allTags[tag] + ')';
         allTagsHTML += '<li><a href="#tag-'+ tag +'">'+ tag +'</a>(' + allTags[tag] + ')</li>';*/
-        
+
         const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + '</li>';
         console.log('tagLinkHTML:', tagLinkHTML);
 
@@ -307,6 +308,12 @@
       console.log(linkHTML);
 
       html = html + linkHTML;
+
+      if(!allAuthors[articleAuthor]) {
+        allAuthors[articleAuthor] = 1;
+      } else {
+        allAuthors[articleAuthor]++;
+      }
 
       authorWrapper.innerHTML = html;
       console.log(authorWrapper.innerHTML);
