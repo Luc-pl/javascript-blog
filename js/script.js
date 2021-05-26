@@ -52,7 +52,7 @@
     optTagsListSelector = '.tags.list',
     optCloudClassCount = 5,
     optCloudClassPrefix = 'tag-size-',
-    optAuthorsListSelector = '.author.list',
+    optAuthorsListSelector = '.authors.list',
     optAuthorClassCount = 5,
     optAuthorClassPrefix = 'author-size-';
 
@@ -354,7 +354,7 @@
       console.log(linkHTML);
 
       /* [NEW] check if this link is NOT already in allAuthor */
-      authorList.innerHTML = html;
+      authorsWrapper.innerHTML = html;
       if(!allAuthors[articleAuthors]) {
         /* [NEW] add tag to allAuthor object */
         allAuthors[articleAuthors] = 1;
